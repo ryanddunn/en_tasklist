@@ -1,3 +1,5 @@
-[21-Jul-2018 11:36:41 America/Los_Angeles] PHP Warning:  include(config.php): failed to open stream: No such file or directory in /home/d3sys0/public_html/en-tasks/task_list.php on line 16
-[21-Jul-2018 11:36:41 America/Los_Angeles] PHP Warning:  include(config.php): failed to open stream: No such file or directory in /home/d3sys0/public_html/en-tasks/task_list.php on line 16
-[21-Jul-2018 11:36:41 America/Los_Angeles] PHP Warning:  include(): Failed opening 'config.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php:lib:') in /home/d3sys0/public_html/en-tasks/task_list.php on line 16
+[10-Aug-2018 13:32:10 America/Los_Angeles] PHP Warning:  require_once(autoload.php): failed to open stream: No such file or directory in /home/d3sys0/public_html/en-tasks/util/util_listTags.php on line 11
+[10-Aug-2018 13:32:10 America/Los_Angeles] PHP Fatal error:  require_once(): Failed opening required 'autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php:lib:') in /home/d3sys0/public_html/en-tasks/util/util_listTags.php on line 11
+[10-Aug-2018 13:32:59 America/Los_Angeles] PHP Warning:  require_once(autoload.php): failed to open stream: No such file or directory in /home/d3sys0/public_html/en-tasks/util/util_listTags.php on line 12
+[10-Aug-2018 13:32:59 America/Los_Angeles] PHP Fatal error:  require_once(): Failed opening required 'autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php:lib:') in /home/d3sys0/public_html/en-tasks/util/util_listTags.php on line 12
+[10-Aug-2018 14:02:41 America/Los_Angeles] PHP Parse error:  syntax error, unexpected 'hit' (T_STRING) in /home/d3sys0/public_html/en-tasks/task_list_web.php on line 60

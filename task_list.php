@@ -76,8 +76,7 @@ $cli_banner =
     // ------- HIGH TASKS ----------
     $count = 0;
     $filter = new NoteFilter();
-    $filter->words = "HIGH";
-    $filter->tagGuids =  $actionitem_tag_guid;
+    $filter->tagGuids = $tag_guid_high;
     $notes_result = $client->getNoteStore()->findNotes($filter, 0, 10);
     $notes = $notes_result->notes;
 	if($notes){
@@ -91,8 +90,7 @@ $cli_banner =
     // ------- MEDIUM TASKS ----------
     $count = 0;
     $filter = new NoteFilter();
-    $filter->words = "MEDIUM";
-    $filter->tagGuids =  $actionitem_tag_guid;
+    $filter->tagGuids = $tag_guid_medium;
     $notes_result = $client->getNoteStore()->findNotes($filter, 0, 10);
     $notes = $notes_result->notes;
     if($notes){
@@ -105,8 +103,7 @@ $cli_banner =
     // ------- LOW TASKS -------------
     $count = 0;
     $filter = new NoteFilter();
-    $filter->words = "LOW";
-    $filter->tagGuids =  $actionitem_tag_guid;
+    $filter->tagGuids = $tag_guid_low;
     $notes_result = $client->getNoteStore()->findNotes($filter, 0, 10);
     $notes = $notes_result->notes;
     if($notes){
@@ -116,5 +113,16 @@ $cli_banner =
         $count ++;
         echo $colors->getColoredString(" * (".$count.") ".$note->title, "light_green", "") . "\n";
     }
+
+    // ------- Count of QUICK TASKS -------------
+    $count = 0;
+    $filter = new NoteFilter();
+    $filter->tagGuids = $tag_guid_quick;
+    $notes_result = $client->getNoteStore()->findNotes($filter, 0, 10);
+    $notes = $notes_result->notes;
+    foreach ($notes as $note) {
+        $count ++;
+    }
+    echo $colors->getColoredString("\n QUICK Notes: ".$count,  "blue", "") . "\n";
 
     echo "\n\n\n"; // makes it more readable on the CLI
