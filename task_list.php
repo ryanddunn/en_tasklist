@@ -1,7 +1,7 @@
 <?php
 
 // Import the classes that we're going to be using
-use EDAM\Types\Data, EDAM\Types\Note, EDAM\Types\Resource, EDAM\Types\ResourceAttributes;
+use EDAM\Types\Data, EDAM\Types\NoteSortOrder, EDAM\Types\Note, EDAM\Types\Resource, EDAM\Types\ResourceAttributes;
 use EDAM\Error\EDAMUserException, EDAM\Error\EDAMErrorCode;
 use Evernote\Client;
 
@@ -76,15 +76,18 @@ $cli_banner =
     // ------- HIGH TASKS ----------
     $count = 0;
     $filter = new NoteFilter();
+    $filter->order = NoteSortOrder::TITLE;
+    $filter->ascending = TRUE;
+// SORT_ORDER_TITLE
     $filter->tagGuids = $tag_guid_high;
     $notes_result = $client->getNoteStore()->findNotes($filter, 0, 10);
     $notes = $notes_result->notes;
 	if($notes){
-		echo $colors->getColoredString("========= HIGH ================",  "light_red", "") . "\n";
+		echo $colors->getColoredString("========= HIGH ================",  "white", "") . "\n";
 	}
     foreach ($notes as $note) {
         $count ++;
-        echo $colors->getColoredString(" * (".$count.") ".$note->title, "light_red", "") . "\n";
+        echo $colors->getColoredString(" * (".$count.") ".$note->title, "white", "") . "\n";
         //echo "\n ... : "; //print_r($note->tagGuids);
     }
     // ------- MEDIUM TASKS ----------
